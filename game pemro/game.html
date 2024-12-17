@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Retro Snake Game</h1>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+  <p class="score">Score: <span id="score">0</span></p>
+  <script src="script.js"></script>
+  <audio id="eatSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+  <audio id="gameOverSound" src="WhatsApp Audio 2024-11-12 at 11.13.52_6903e7b7.mp3"></audio>
+  <audio autoplay loop>
+    <source src="WhatsApp Audio 2024-11-19 at 11.35.23_d58147a0.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="controls">
+    <button id="musicToggle" class="control-btn">🔊 Music On/Off</button>
+    <span class="score">Score: <span id="score">0</span></span>
+  </div>
+</body>
+</html>

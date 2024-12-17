@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesss.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard Admin E-Commerce</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#sales">Penjualan</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#customers">Pelanggan</a></li>
+            <li><a href="#settings">Pengaturan</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Dashboard Admin E-Commerce</h1>
+        </header>
+        <main>
+            <div class="card">
+                <h2>Grafik Penjualan Bulanan</h2>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Data Penjualan</h2>
+                <table id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Nama Customer</th>
+                            <th>Jumlah Barang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kopi Khas Nusantara</td>
+                            <td>Andi Setiawan</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Teh Herbal Organik</td>
+                            <td>Siti Nurhaliza</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Kue Kering Coklat</td>
+                            <td>Joko Susanto</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Perangkat Lunak Manajemen Proyek</td>
+                            <td>Lisa Mardiana</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Smartwatch Premium</td>
+                            <td>Rani Maulani</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Botol Air Stainless Steel</td>
+                            <td>Hendra Prabowo</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Skin Care Alami</td>
+                            <td>Farah Nadia</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Headphone Noise Cancelling</td>
+                            <td>Doni Rinaldi</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Penjualan</title>
+    <!-- Tambahkan CDN Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* Gaya Umum */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 20px;
+        color: #333;
+      }
+
+      table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #2980b9;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Grafik */
+      .chart-container {
+        width: 60%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Laporan Penjualan</h1>
+
+    <!-- Tabel Data -->
+    <table>
+      <tr>
+        <th rowspan="2">Tahun</th>
+        <th colspan="12">Bulan</th>
+      </tr>
+      <tr>
+        <th>Januari</th>
+        <th>Februari</th>
+        <th>Maret</th>
+        <th>April</th>
+        <th>Mei</th>
+        <th>Juni</th>
+        <th>Juli</th>
+        <th>Agustus</th>
+        <th>September</th>
+        <th>Oktober</th>
+        <th>November</th>
+        <th>Desember</th>
+      </tr>
+      <tr>
+        <td>2022</td>
+        <td>4017</td>
+        <td>6135</td>
+        <td>7091</td>
+        <td>5841</td>
+        <td>5036</td>
+        <td>4547</td>
+        <td>3467</td>
+        <td>3970</td>
+        <td>6313</td>
+        <td>3595</td>
+        <td>9207</td>
+        <td>5945</td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td>2416</td>
+        <td>4136</td>
+        <td>7935</td>
+        <td>8004</td>
+        <td>9505</td>
+        <td>5026</td>
+        <td>6108</td>
+        <td>6343</td>
+        <td>9404</td>
+        <td>9280</td>
+        <td>9287</td>
+        <td>8689</td>
+      </tr>
+    </table>
+
+    <!-- Grafik Data -->
+    <div class="chart-container">
+      <h2>Grafik Laporan Penjualan</h2>
+      <canvas id="penjualanChart"></canvas>
+    </div>
+
+    <!-- Script JavaScript untuk Chart -->
+    <script>
+      // Data penjualan
+      const bulan = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
+      const penjualan2022 = [
+        4017, 6135, 7091, 5841, 5036, 4547, 3467, 3970, 6313, 3595, 9207, 5945,
+      ];
+      const penjualan2023 = [
+        2416, 4136, 7935, 8004, 9505, 5026, 6108, 6343, 9404, 9280, 9287, 8689,
+      ];
+
+      // Konfigurasi Chart.js
+      const ctx = document.getElementById("penjualanChart").getContext("2d");
+      const penjualanChart = new Chart(ctx, {
+        type: "bar", // Jenis grafik: batang
+        data: {
+          labels: bulan, // Label bulan
+          datasets: [
+            {
+              label: "2022",
+              data: penjualan2022,
+              backgroundColor: "rgba(54, 162, 235, 0.7)", // Warna biru
+              borderColor: "rgba(54, 162, 235, 1)",
+              borderWidth: 1,
+            },
+            {
+              label: "2023",
+              data: penjualan2023,
+              backgroundColor: "rgba(255, 99, 132, 0.7)", // Warna merah
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Jumlah Penjualan",
+              },
+            },
+            x: {
+              title: {
+                display: true,
+                text: "Bulan",
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
